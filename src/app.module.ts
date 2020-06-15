@@ -1,7 +1,11 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { RestaurantModule } from './restaurant/restaurant.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/yelp')],
+  imports: [
+    RestaurantModule,
+    MongooseModule.forRoot('mongodb://localhost/yelp'),
+  ],
 })
 export class AppModule {}
